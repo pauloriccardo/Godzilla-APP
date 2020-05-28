@@ -1,0 +1,53 @@
+<script>
+
+	function verifica()
+	{
+	ris = false;
+	
+	if(cf.value.length != 16 )
+		ris = false;
+	else
+		if( isNaN(cf.value[0]) && 
+			isNaN(cf.value[1]) &&
+			isNaN(cf.value[2]) &&
+			isNaN(cf.value[3]) &&
+			isNaN(cf.value[4]) &&
+			isNaN(cf.value[5]) &&
+			isNaN(cf.value[6]) &&
+			isNaN(cf.value[7]) &&
+			isNaN(cf.value[8]) &&
+			isNaN(cf.value[9]) &&
+			isNaN(cf.value[10]) &&
+			isNaN(cf.value[11]) &&
+			isNaN(cf.value[12]) &&
+			isNaN(cf.value[13]) &&
+			isNaN(cf.value[14]) &&
+			isNaN(cf.value[15]) 
+			)
+			ris = true;
+	
+	if(!ris)		
+		errore.innerHTML = "I Parametri Sbagliatto";
+	
+	return ris;
+	}
+
+
+</script>
+
+
+<form method="get" action="Index" onSubmit="return verifica()">
+	
+	Inserimento di una nuova persona <br>
+	CF: <input type="text" id="cf" name="cf"/> <br>
+	Nome: <input type="text" id="name" name="nome"/> <br>
+	Cognome: <input type="text" id="cognome" name="cognome"/> <br>	
+	Residenza: <input type="text" id="residenza" name="residenza"/> <br>
+	Data Nascita: <input type="date" id="datanascita" name="datanascita"/> <br>
+	
+	<input type="hidden" name="comando" value="nuovapersona"/> <br>
+	
+	<input type="submit" value="Inserisci"/> <br>
+	<p id="errore" style="color:red"> </p>
+	
+</form>

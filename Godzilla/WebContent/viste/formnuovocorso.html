@@ -1,0 +1,29 @@
+<script>
+
+	function verifica()
+	{
+		var ris = true;
+		
+		if(nome.value == "" || nome.value.length < 6)
+			ris = false;
+		
+		
+		return ris;		
+	}
+
+
+</script>
+
+
+<form method="get" action="Index" onSubmit="return verifica()">
+	
+	Inserimento di un nuovo corso <br>
+	Nome: <input type="text" id="nome" name="nome"/> <br>
+	Data inizio: <input type="date" name="datainizio"/> <br>
+	Data fine: <input type="date" name="datafine"/> <br>
+	
+	<input type="hidden" name="comando" value="nuovocorso"/> <br>
+	
+	<input type="submit" value="Inserisci"/> <br>
+	
+</form>
